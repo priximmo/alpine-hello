@@ -10,7 +10,7 @@ node{
     }
 
     stage('Run image') {
-        docker.image(''xavki/hello).withRun('') { c ->
+        docker.image('xavki/hello').withRun('') { c ->
         sh 'docker ps'
     }
 
