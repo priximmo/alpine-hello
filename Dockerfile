@@ -1,4 +1,4 @@
-FROM alpine:3.3
-RUN apk add --no-cache python
-ADD app.py /
-CMD ["python","app.py"]
+FROM nginx:latest
+RUN sed -i 's/nginx/xavki/g' /usr/share/nginx/html/index.html
+EXPOSE 80
+

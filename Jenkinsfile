@@ -6,15 +6,17 @@ node{
     }
 
     stage('Build image') {
-        app = docker.build("xavki/hello")
+        app = docker.build("xavki/nginx")
     }
 
     stage('Run image') {
-				agent {
-        	docker {
-          	image 'xavki/hello'
-					}
-				}
+        docker.image(app).withRun('-p 80:80') { c ->
+
+        sh 'docker ps'
+
+        sh 'curl localhost'
+
+    }
 
     }
     
