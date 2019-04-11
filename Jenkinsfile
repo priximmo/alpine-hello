@@ -10,7 +10,9 @@ node{
     }
 
     stage('Run image') {
-        docker.image('xavki/hello')
+        docker {
+          image 'xavki/hello'
+				}
 
     }
     
