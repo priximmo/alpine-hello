@@ -8,4 +8,12 @@ node{
     stage('Build image') {
         app = docker.build("xavki/hello")
     }
+
+    stage('Run image') {
+        docker.image(''xavki/hello).withRun('') { c ->
+        sh 'docker ps'
+    }
+
+    }
+    
 }
